@@ -61,8 +61,8 @@
         .video-container {
             position: relative;
             display: inline-block;
-            width: 385px; /* 根据视频的实际宽度调整 */
-            height: 300px; /* 根据视频的实际高度调整 */
+            width: 384px; /* 根据视频的实际宽度调整 */
+            height: 256px; /* 根据视频的实际高度调整 */
             /*border: 2px solid red; !* 调试用边框 *!*/
             margin: 0; /* 移除默认边距 */
             padding: 0; /* 移除默认填充 */
@@ -72,8 +72,8 @@
         .video-container2 {
             position: relative;
             display: inline-block;
-            width: 230px; /* 根据视频的实际宽度调整 */
-            height: 150px; /* 根据视频的实际高度调整 */
+            width: 240px; /* 根据视频的实际宽度调整 */
+            height: 160px; /* 根据视频的实际高度调整 */
             /*border: 2px solid red; !* 调试用边框 *!*/
             margin: 0; /* 移除默认边距 */
             padding: 0; /* 移除默认填充 */
@@ -109,44 +109,58 @@
             padding: 5px;
             font-size: 16px;
             border-radius: 5px;
+            width: 30px;  /* 设置宽度 */
+            height: 30px; /* 设置高度与宽度相同 */
+            display: flex; /* 使用 flexbox 布局 */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
         }
 
 
-        .collapse-content {
-            display: none;
-            margin-top: 10px;
+        /*.collapse-content {*/
+        /*    display: none;*/
+        /*    margin-top: 10px;*/
+        /*}*/
+
+        /*.triangle-button[aria-expanded="true"] + .collapse-content {*/
+        /*    display: block;*/
+        /*}*/
+
+        /*.triangle-button {*/
+        /*    background: none;*/
+        /*    border: none;*/
+        /*    cursor: pointer;*/
+        /*    outline: none;*/
+        /*    padding: 0;*/
+        /*    margin-bottom: 10px;*/
+        /*}*/
+
+        /*.triangle-button .triangle {*/
+        /*    width: 0;*/
+        /*    height: 0;*/
+        /*    border-top: 10px solid transparent;*/
+        /*    border-bottom: 10px solid transparent;*/
+        /*    border-left: 15px solid #007bff; !* 三角形的颜色 *!*/
+        /*    display: inline-block;*/
+        /*    transition: transform 0.3s ease;*/
+        /*}*/
+
+        /*.triangle-button[aria-expanded="true"] .triangle {*/
+        /*    transform: rotate(90deg);*/
+        /*}*/
+
+        /*.triangle-button:focus {*/
+        /*    outline: none;*/
+        /*}*/
+
+        .auther_text {
+        text-decoration: none !important; /* 默认情况下移除下划线 */
         }
 
-        .triangle-button[aria-expanded="true"] + .collapse-content {
-            display: block;
+        .auther_text:hover {
+            text-decoration: underline !important; /* 鼠标悬停时显示下划线 */
         }
 
-        .triangle-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            padding: 0;
-            margin-bottom: 10px;
-        }
-
-        .triangle-button .triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid #007bff; /* 三角形的颜色 */
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .triangle-button[aria-expanded="true"] .triangle {
-            transform: rotate(90deg);
-        }
-
-        .triangle-button:focus {
-            outline: none;
-        }
 
     </style>
 
@@ -155,18 +169,20 @@
 <body>
 
     <div class="highlight-clean d-flex flex-column align-items-center justify-content-center" style="padding-bottom: 20px;">
-        <div class="container" style="padding-bottom: 10px; max-width: 1000px;">
-            <h1 class="text-center"><b>Mobius</b>: Text to Seamless Looping Video Generation via Latent Shift</h1>
+        <div class="container text-center" style="padding-bottom: 10px; max-width: 1000px;">
+            <img src="images/icon/log.png" alt="Log Image" style="vertical-align: middle;">
+            <b style="font-size: 4em; vertical-align: middle; font-weight: bold; font-style: italic; font-family: 'Comic Sans MS', cursive">Mobius</b>
+            <h1 class="text-center">Text to Seamless Looping Video Generation via Latent Shift</h1>
         </div>
         <div class="container  d-flex flex-column align-items-center justify-content-center" style="max-width: 900px;">
             <div class="row authors" style="padding-bottom: 20px;">
-                <h5 class="text-center" style="width: auto"><a class="text-center" href="Mobius.github.io">Xiuli Bi</a><sup>1</sup></h5>
-                <h5 class="text-center" style="width: auto"><a class="text-center" href="Mobius.github.io">Jianfei Yuan</a><sup>1</sup></h5>
-                <h5 class="text-center" style="width: auto"><a class="text-center" href="Mobius.github.io">Bo Liu</a><sup>1</sup></h5>
-                <h5 class="text-center" style="width: auto"><a class="text-center" href="Mobius.github.io">Yong Zhang</a><sup>2</sup></h5>
-                <h5 class="text-center" style="width: auto"><a class="text-center" href="Mobius.github.io">Xiaodong Cun</a><sup>3*</sup></h5>
-                <h5 class="text-center" style="width: auto"><a class="text-center" href="Mobius.github.io">Chi-Man Pan</a><sup>4</sup></h5>
-                <h5 class="text-center" style="width: auto"><a class="text-center" href="Mobius.github.io">Bin Xiao</a><sup>1</sup></h5>
+                <h5 class="text-center" style="width: auto"><a class="text-center auther_text" href="Mobius.github.io">Xiuli Bi</a><sup>1</sup></h5>
+                <h5 class="text-center" style="width: auto"><a class="text-center auther_text" href="Mobius.github.io">Jianfei Yuan</a><sup>1</sup></h5>
+                <h5 class="text-center" style="width: auto"><a class="text-center auther_text" href="Mobius.github.io">Bo Liu</a><sup>1</sup></h5>
+                <h5 class="text-center" style="width: auto"><a class="text-center auther_text" href="Mobius.github.io">Yong Zhang</a><sup>2</sup></h5>
+                <h5 class="text-center" style="width: auto"><a class="text-center auther_text" href="Mobius.github.io">Xiaodong Cun</a><sup>3*</sup></h5>
+                <h5 class="text-center" style="width: auto"><a class="text-center auther_text" href="Mobius.github.io">Chi-Man Pan</a><sup>4</sup></h5>
+                <h5 class="text-center" style="width: auto"><a class="text-center auther_text" href="Mobius.github.io">Bin Xiao</a><sup>1</sup></h5>
 
 <!--                <h5 class="text-center"><a class="text-center" href=" https://graceduansu.github.io">Grace Su</a><sup>1*</sup></h5>-->
 <!--                <h5 class="text-center"><a href="https://richzhang.github.io">Richard Zhang</a><sup>2</sup></h5>-->
@@ -178,7 +194,9 @@
             <div class="row authors institute">
                 <div class="col-sm-12">
                     <h3 class="text-center"><sup>1</sup> Chongqing University of Post and Telecommunications
-                        &nbsp&nbsp <sup>2</sup> Meituan &nbsp&nbsp <sup>3</sup> Great Bay University &nbsp&nbsp <sup>4</sup> University of Macau
+                        &nbsp&nbsp <sup>2</sup> Meituan &nbsp&nbsp
+                        <br>
+                        <sup>3</sup> Great Bay University &nbsp&nbsp <sup>4</sup> University of Macau
                     </h3>
                 </div>
             </div>
@@ -270,34 +288,36 @@
                         <span class="frame-number">0</span>
                     </div>
 
-                <p>Without any training, the proposed Mobius can generate seamless looping videos using the pre-trained Text-to-Video latent diffusion model directly. Can you identify the end in the above video?
-                </p><p></p>
+                <p style="text-indent: 2em;">
+                    Without any training, the proposed Mobius can generate seamless looping videos using the pre-trained Text-to-Video latent diffusion model directly. Can you identify the end in the above video?
+                </p>
+                <p></p>
                 <h6 class="caption"></h6>
             </div>
         </div>
     </div>
 
-    <hr style="max-width: 1200px; margin: 0 auto;">
-    <div class="container" style="max-width: 1200px;">
-        <div class="row">
-            <div class="col-md-12">
-                <button class="triangle-button" type="button" id="toggleAbstract" aria-expanded="false">
-                    <span class="triangle"></span>
-                </button>
-                <center><h2>Abstract</h2></center>
-                <div id="abstractCollapse" class="collapse-content">
-                    <p>
-                    We present Mobius, a novel method to generate seamlessly looping videos from text descriptions directly without any user annotations, thereby creating new visual materials for the multi-media presentation.
-                    Our method repurposes the pre-trained video latent diffusion model for generating looping videos from text prompts without any training.
-                    During inference, we first construct a latent cycle by connecting the starting and ending noise of the videos. Given that the temporal consistency can be maintained by the context of the video diffusion model, we perform multi-frame latent denoising by gradually shifting the first-frame latent to the end in each step. As a result, the denoising context varies in each step while maintaining consistency throughout the inference process.
-                    Moreover, the latent cycle in our method can be of any length. This extends our latent-shifting approach to generate seamless looping videos beyond the scope of the video diffusion model's context.
-                    Unlike previous cinemagraphs, the proposed method does not require an image as appearance, which will restrict the motions of the generated results. Instead, our method can produce more dynamic motion and better visual quality.
-                    We conduct multiple experiments and comparisons to verify the effectiveness of the proposed method, demonstrating its efficacy in different scenarios.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <hr style="max-width: 1200px; margin: 0 auto;">-->
+<!--    <div class="container" style="max-width: 1200px;">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <button class="triangle-button" type="button" id="toggleAbstract" aria-expanded="false">-->
+<!--                    <span class="triangle"></span>-->
+<!--                </button>-->
+<!--                <center><h2>Abstract</h2></center>-->
+<!--                <div id="abstractCollapse" class="collapse-content">-->
+<!--                    <p>-->
+<!--                    We present Mobius, a novel method to generate seamlessly looping videos from text descriptions directly without any user annotations, thereby creating new visual materials for the multi-media presentation.-->
+<!--                    Our method repurposes the pre-trained video latent diffusion model for generating looping videos from text prompts without any training.-->
+<!--                    During inference, we first construct a latent cycle by connecting the starting and ending noise of the videos. Given that the temporal consistency can be maintained by the context of the video diffusion model, we perform multi-frame latent denoising by gradually shifting the first-frame latent to the end in each step. As a result, the denoising context varies in each step while maintaining consistency throughout the inference process.-->
+<!--                    Moreover, the latent cycle in our method can be of any length. This extends our latent-shifting approach to generate seamless looping videos beyond the scope of the video diffusion model's context.-->
+<!--                    Unlike previous cinemagraphs, the proposed method does not require an image as appearance, which will restrict the motions of the generated results. Instead, our method can produce more dynamic motion and better visual quality.-->
+<!--                    We conduct multiple experiments and comparisons to verify the effectiveness of the proposed method, demonstrating its efficacy in different scenarios.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
     <!-- <hr class="divider"> -->
@@ -306,7 +326,10 @@
         <div class="row">
             <div class="col-md-12">
                 <center><h2>Algorithm</h2></center>
-                <p>
+                <p style="text-indent: 2em;">
+                We present Mobius, a novel method to generate seamlessly looping videos from text descriptions directly without any user annotations, thereby creating new visual materials for the multi-media presentation.
+                Our method repurposes the pre-trained video latent diffusion model for generating looping videos from text prompts without any training.
+                During inference, we first construct a latent cycle by connecting the starting and ending noise of the videos. Given that the temporal consistency can be maintained by the context of the video diffusion model, we perform multi-frame latent denoising by gradually shifting the first-frame latent to the end in each step. As a result, the denoising context varies in each step while maintaining consistency throughout the inference process.
                 Taking <strong>4 latent toys</strong> pre-trained Video Diffusion Models(VDM) as an example, we build a latent cycle and shift the start point in each denoising step in inference for text-guided looping video generation. Notice that, the shifting is conducted in the latent space, we emit the latent encoder and decoder for easy understanding.
                 </p>
                 <p></p><p></p>
@@ -325,7 +348,10 @@
         <div class="row">
             <div class="col-md-12">
                 <center><h2>Comparison to Baselines</h2></center>
-                Our method is based on the pre-trained open-source latent video diffusion model, CogVideoX-5B. Since there is no previous work for open-domain looping video generation from a text description, we majorly compare two generative interpolation methods and one method from the community. Specifically, we comapre with <strong>Svd-Interp.</strong>, <strong>CogX-Interp.</strong>, <strong>Latent Mix</strong>, and dirct generation of <strong>CogvideoX</strong>.
+                <p style="text-indent: 2em;">
+                    Our method is based on the pre-trained open-source latent video diffusion model, CogVideoX-5B. Since there is no previous work for open-domain looping video generation from a text description, we majorly compare two generative interpolation methods and one method from the community.
+                    Specifically, we comapre with <strong>Svd-Interp.</strong>, <strong>CogX-Interp.</strong>, <strong>Latent Mix</strong>, and dirct generation of <strong>CogvideoX</strong>.
+                </p>
                 <p></p><p></p>
                 <!--                row1-->
                 <!--                row1-->
@@ -532,23 +558,24 @@
 <!--        <hr style="max-width: 1000px;">-->
 
     </div>
-        <hr style="max-width: 1200px;  margin: 0 auto;">
+
+    <hr style="max-width: 1200px;  margin: 0 auto;">
     <div class="container" style="max-width: 1200px;">
         <div class="row">
             <div id="gallery" class="col-md-12">
                 <center><h2>Gallery</h2></center>
-                <p>
+                <p style="text-indent: 2em;">
                     We demonstrated the generation of more looping videos in various styles.
                 </p>
                 <p></p><p></p>
-                <div id="singleconceptscroll" class="containershadow" style="max-width: 1200px; max-height: 2048px;">
+<!--                <div id="singleconceptscroll" class="containershadow" style="max-width: 1200px; max-height: 2048px;">-->
 
 
                     <!-- START OF SINGLE CONCEPT -->
 
 
-<div class="row">
-    <div class="column px-4" style="margin: auto;width: 95%;">
+<div class="row" style="margin-bottom: 0;">
+    <div class="column px-4" style="margin: auto;width: 100%;  margin-bottom: -10px;">
     <p class="caption text-center" style="font-size: 20px;">
         <strong>Animal</strong>
     </p>
@@ -590,8 +617,8 @@
 </div>
 
 
-<div class="row">
-    <div class="column px-4" style="margin: auto;width: 95%;">
+<div class="row" style="margin-bottom: 0;">
+    <div class="column px-4" style="margin: auto;width: 100%;  margin-bottom: -10px;">
     <p class="caption text-center" style="font-size: 20px;">
         <strong>Environment</strong>
     </p>
@@ -633,8 +660,8 @@
 </div>
 
 
-<div class="row">
-    <div class="column px-4" style="margin: auto;width: 95%;">
+<div class="row" style="margin-bottom: 0;">
+    <div class="column px-4" style="margin: auto;width: 100%;  margin-bottom: -10px;">
     <p class="caption text-center" style="font-size: 20px;">
         <strong>Cartoon</strong>
     </p>
@@ -677,8 +704,8 @@
 
 
 
-<div class="row">
-    <div class="column px-4" style="margin: auto;width: 95%;">
+<div class="row" style="margin-bottom: 0;">
+    <div class="column px-4" style="margin: auto;width: 100%;  margin-bottom: -10px;">
     <p class="caption text-center" style="font-size: 20px;">
         <strong>Watercolor</strong>
     </p>
@@ -700,7 +727,7 @@
         <div class="row">
             <div class="video-container">
                 <video loop autoplay muted class="video">
-                    <source src="images/results/cases/watercolor/case_17.mp4" type="video/mp4">
+<!--                    <source src="images/results/cases/watercolor/case_17.mp4" type="video/mp4">-->
                 </video>
                 <span class="frame-number">0</span>
             </div>
@@ -720,8 +747,8 @@
 </div>
 
 
-<div class="row">
-    <div class="column px-4" style="margin: auto;width: 95%;">
+<div class="row" style="margin-bottom: 0;">
+    <div class="column px-4" style="margin: auto;width: 100%;  margin-bottom: -10px;">
     <p class="caption text-center" style="font-size: 20px;">
         <strong>Cyberpunk</strong>
     </p>
@@ -732,7 +759,7 @@
         <div class="row">
             <div class="video-container">
                 <video loop autoplay muted class="video">
-                    <source src="images/results/cases/cyberpunk/case_21.mp4" type="video/mp4">
+<!--                    <source src="images/results/cases/cyberpunk/case_21.mp4" type="video/mp4">-->
                 </video>
                 <span class="frame-number">0</span>
             </div>
@@ -754,7 +781,7 @@
         <div class="row">
             <div class="video-container">
                 <video loop autoplay muted class="video">
-                    <source src="images/results/cases/cyberpunk/case_100.mp4" type="video/mp4">
+<!--                    <source src="images/results/cases/cyberpunk/case_100.mp4" type="video/mp4">-->
                 </video>
                 <span class="frame-number">0</span>
             </div>
@@ -766,24 +793,21 @@
 
 
 
-                </div>
+<!--                </div>-->
                 <p></p><p></p>
 
             </div>
         </div>
     </div>
 
-
-
-
-    <br>
     <hr style="max-width: 1200px;  margin: 0 auto;">
     <div class="container" style="max-width: 1200px;">
         <div class="row">
             <div class="col-md-12">
                 <center><h2>Application </h2></center>
                 <h3>Longer Looping Video Generation </h3>
-                <p>  Our method can be easily extended to the generation of <strong>longer looping videos</strong>.
+                <p style="text-indent: 2em;">
+                    Our method can be easily extended to the generation of <strong>longer looping videos</strong>.
                 </p>
                 <p></p><p></p>
                 <!--                case1-->
@@ -867,8 +891,8 @@
 <!--                <p>-->
 <!--                    Since the proposed latent shifting can naturally work for longer video generation, we also compare our method for longer video generation, including <strong>Gen-L-Video</strong> achieves video smoothness by blending the overlapping regions of latents. \textit{FreeNoise} \cite{freenoise} maintains subject consistency using a shuffled sequence of latents. \textit{FIFO}~\cite{fifo} generates each frame iteratively using a queue of latents at different noise levels. \textit{DitCtrl}~\cite{ditctrl} preserves video transitions through a KV-sharing mechanism and latent mixing strategies.-->
 <!--                </p>-->
-                <p>  We show that our method supports <strong>longer video</strong> inference beyond the training context by a non-cycle latent displacement. We utilize the same RoPE interpolation as we introduced before to correct the position of the latent. We compare our method for longer video generation, including <strong>Gen-L-Video</strong>, <strong>FreeNoise</strong>, <strong>FIFO</strong>, <strong>DitCtrl</strong> and <strong>Naïve</strong>, which is the method of direct inference generation.
-<!--                </p>-->
+                <p style="text-indent: 2em;">
+                    We show that our method supports <strong>longer video</strong> inference beyond the training context by a non-cycle latent displacement. We utilize the same RoPE interpolation as we introduced before to correct the position of the latent. We compare our method for longer video generation, including <strong>Gen-L-Video</strong>, <strong>FreeNoise</strong>, <strong>FIFO</strong>, <strong>DitCtrl</strong> and <strong>Naïve</strong>, which is the method of direct inference generation.
                 <p></p><p></p>
 
                 <div class="row">
@@ -1029,7 +1053,7 @@
         <div class="row">
             <div class="col-md-12">
                 <center><h2>Limitations </h2></center>
-                <p> Since our method is a training-free method based on the pre-trained video diffusion model, our motion prior might be influenced by the pre-trained video diffusion model. The generated results might not show a very smooth video in the customized domain.
+                <p style="text-indent: 2em;"> Since our method is a training-free method based on the pre-trained video diffusion model, our motion prior might be influenced by the pre-trained video diffusion model. The generated results might not show a very smooth video in the customized domain.
                 <p></p><p></p>
                 <div id="limitation" class="container" style="max-width: 1200px;">
 
